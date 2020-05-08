@@ -40,7 +40,7 @@ def parse_example(f):
   print(filepath)
   image_raw = cv2.imread(filepath)
 
-  encoded_image_data = open(filepath).read()
+  encoded_image_data = open(filepath, 'rb').read()
   key = hashlib.sha256(encoded_image_data).hexdigest()
 
   height, width, channel = image_raw.shape
