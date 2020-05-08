@@ -6,7 +6,7 @@ import os
 import cv2
 import tensorflow as tf
 
-from data_process import dataset_util
+from util import dataset_util
 
 image_dir = 'WIDER/WIDER_train/images'
 
