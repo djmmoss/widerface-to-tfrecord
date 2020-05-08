@@ -5,6 +5,7 @@ import os
 
 import cv2
 import tensorflow as tf
+import numpy as np
 
 from utils import dataset_util
 
@@ -59,7 +60,7 @@ def parse_sample(filename, f):
             encoded_image_data = ff.read()
 
     key = hashlib.sha256(encoded_image_data).hexdigest()
-    face_num = int(f.readline().rstrip())
+    face_num = np.max(int(f.readline().rstrip()), 1)
     valid_face_num = 0
 
     for i in range(face_num):
