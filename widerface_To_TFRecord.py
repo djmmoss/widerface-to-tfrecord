@@ -60,7 +60,7 @@ def parse_sample(filename, f):
             encoded_image_data = ff.read()
 
     key = hashlib.sha256(encoded_image_data).hexdigest()
-    face_num = np.max(int(f.readline().rstrip()), 1)
+    face_num = np.max([int(f.readline().rstrip()), 1])
     valid_face_num = 0
 
     for i in range(face_num):
