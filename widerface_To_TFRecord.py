@@ -58,7 +58,7 @@ def parse_example(f):
             ymins.append( max(0.005, (float(annot[1]) / height) ) )
             xmaxs.append( min(0.995, ((float(annot[0]) + float(annot[2])) / width) ) )
             ymaxs.append( min(0.995, ((float(annot[1]) + float(annot[3])) / height) ) )
-            classes_text.append('face')
+            classes_text.append('face'.encode('utf8'))
             classes.append(1)
             poses.append("front".encode('utf8'))
             truncated.append(int(0))
